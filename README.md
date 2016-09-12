@@ -1,3 +1,22 @@
+# Repetier-Firmware for Nightly Board
+I hope You know what I mean whith nightly board...
+
+# Current state
+- prints really well with repetier host - nothing else tested for now
+- no Display, no keys, no SD suppoert
+- optimized for old plywood printers. If You have a model with stiff (metal or acrylic) frame You can set xy-acceleration to 5000 mm/s^2 and beyond
+- heated bed thermistor values are for CTC clones - and guessed. Be careful with bed temp settings!
+- no optimizations for jerk and filament acceleration advance yet
+
+
+!!! BIG FAT WARNNIG: do not enable display code. It killed parts of my hardware! I'll remove this message when issues are resolved. !!!
+
+Some legal notice:
+This is experimental software. Use at your own risk. We cannot be held liable under any circumstances for damage to hardware or software, lost data, or other direct or indirect damage resulting from the use of this software. If you do not agree to these terms and conditions, you are not permitted to use or further distribute this software.
+
+
+Here the forked original descption:
+
 # Repetier-Firmware - the fast and user friendly firmware
 
 ## Notes for developers/pull requests
@@ -7,7 +26,7 @@ like contributions from other sources, especially since the firmware is very
 hardware related and many things can only be implemented/tested with the right
 hardware. To allow easy integration of new features you should follow some simple
 principals.
-1. Only send pull requests against development version. This is where we add
+1. Only senad pull requests against development version. This is where we add
 and test new features and bug fixes. From time to time we push these to master
 as a new version.
 2. Do not include your personal configuration files. If you need new configuration
