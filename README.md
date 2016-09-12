@@ -7,6 +7,7 @@ I hope You know what I mean with nightly board...
 - optimized for old plywood printers. If You have a model with stiff (metal or acrylic) frame You can set xy-acceleration to 5000 mm/s^2 and beyond
 - heated bed thermistor values are for CTC clones - and guessed. Be careful with bed temp settings!
 - no optimizations for jerk and filament acceleration advance yet
+- compile with arduino tools 1.6.12 or later ( see boards manager ), set Arduino/Genuino Mega 2560, processor type ATmega 1280
 
 
 !!! BIG FAT WARNNIG: do not enable display code. It killed parts of my hardware! I'll remove this message when issues are resolved. !!!
