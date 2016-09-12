@@ -1,5 +1,5 @@
 # Repetier-Firmware for Nightly Board
-I hope You know what I mean whith nightly board...
+I hope You know what I mean with nightly board...
 
 # Current state
 - prints really well with repetier host - nothing else tested for now
