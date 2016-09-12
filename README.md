@@ -10,7 +10,7 @@ I hope You know what I mean with nightly board...
 - compile with arduino tools 1.6.12 or later ( see boards manager ), set Arduino/Genuino Mega 2560, processor type ATmega 1280
 
 Installation:
-I'm usuing usbasp directly connected to the main processors isp port - nothing else tested yet
+I'm using usbasp directly connected to the main processors isp port - nothing else tested yet. Usel "upload with programmer" in arduino ide.
 
 ## !!! BIG FAT WARNNIG: do not enable display code. It killed parts of my hardware! I'll remove this message when issues are resolved. !!!
 
