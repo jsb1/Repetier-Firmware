@@ -1036,4 +1036,12 @@ extern int debugWaitLoop;
 #include "CustomEvents.h"
 #endif
 
+#if STEPPER_CURRENT_CONTROL==CURRENT_CONTROL_MIGHTY1
+#include "SoftPotManager.h"
+#endif
+
+#if (defined(SUPPORT_MAX6675) || defined(SUPPORT_MAX31855)) && defined(THERMO_SCK)
+#include "SoftSPI.h"
+#endif
+
 #endif
