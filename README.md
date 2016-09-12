@@ -1,6 +1,8 @@
 # Repetier-Firmware - the fast and user friendly firmware
 
-If You know what Migthtyboad One is and are interested please take a look at the developement branch. 
-If not please go to the  originator's site:
+This is a port of repetier firmware to a board of a well known brand. In order to avoid problems with trademarks I'll call it nightlyboard for now.
+If You know what it is and are interested please take a look at the developement branch. 
+
+If not please go to the  originator's site if repetier firmware:
 
 [http://www.repetier.com]
