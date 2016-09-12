@@ -9,8 +9,10 @@ I hope You know what I mean with nightly board...
 - no optimizations for jerk and filament acceleration advance yet
 - compile with arduino tools 1.6.12 or later ( see boards manager ), set Arduino/Genuino Mega 2560, processor type ATmega 1280
 
+Installation:
+I'm usuing usbasp directly connected to the main processors isp port - nothing else tested yet
 
-!!! BIG FAT WARNNIG: do not enable display code. It killed parts of my hardware! I'll remove this message when issues are resolved. !!!
+## !!! BIG FAT WARNNIG: do not enable display code. It killed parts of my hardware! I'll remove this message when issues are resolved. !!!
 
 Some legal notice:
 This is experimental software. Use at your own risk. We cannot be held liable under any circumstances for damage to hardware or software, lost data, or other direct or indirect damage resulting from the use of this software. If you do not agree to these terms and conditions, you are not permitted to use or further distribute this software.
