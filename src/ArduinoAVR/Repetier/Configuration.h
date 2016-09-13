@@ -1560,12 +1560,12 @@ Always hard to say since the other angle is 89° in this case!
 
 /** Set to false to disable SD support: */
 #ifndef SDSUPPORT  // Some boards have SD support on board. These define the values already in pins.h
-#define SDSUPPORT false
+#define SDSUPPORT true
 // Uncomment to enable or change card detection pin. With card detection the card is mounted on insertion.
-#undef SDCARDDETECT
-#define SDCARDDETECT -1
+//#undef SDCARDDETECT
+//#define SDCARDDETECT -1
 // Change to true if you get a inserted message on removal.
-#define SDCARDDETECTINVERTED false
+//#define SDCARDDETECTINVERTED false
 #endif
 /** Show extended directory including file length. Don't use this with Pronterface! */
 #define SD_EXTENDED_DIR 1
