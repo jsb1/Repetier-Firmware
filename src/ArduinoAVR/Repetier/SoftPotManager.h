@@ -192,12 +192,6 @@ private:
 		delay();
 		SCL_PIN::setValue(false);
 		SDA_PIN::setValue(true);
-/*
-		RFSerial.print("read ");
-		RFSerial.print(SDA_PIN::arduinoPin);
-		RFSerial.print(" ");
-		RFSerial.println(b);
-*/
 		return b;
 	}
 };
