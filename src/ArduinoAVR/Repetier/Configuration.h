@@ -1676,7 +1676,7 @@ the language can be switched any time.
 On 8 bit processors do not active all or you run out of text memory (64kb)
 and strange errors occur. 8-9 languages normally work
 */
-// not space for languages on '1280
+// not much space for languages on '1280
 #define LANGUAGE_EN_ACTIVE 1 // English
 #define LANGUAGE_DE_ACTIVE 0 // German
 #define LANGUAGE_NL_ACTIVE 0 // Dutch

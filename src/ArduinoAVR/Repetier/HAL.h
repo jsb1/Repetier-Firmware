@@ -523,7 +523,7 @@ public:
     }
     static inline void eprSetInt16(unsigned int pos,int16_t value)
     {
-        eeprom_write_word((unsigned int*)(EEPROM_OFFSET + pos),value);
+        eeprom_write_word((uint16_t*)(EEPROM_OFFSET + pos),value);
     }
     static inline void eprSetInt32(unsigned int pos,int32_t value)
     {

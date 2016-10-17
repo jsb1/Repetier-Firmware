@@ -2871,7 +2871,7 @@ S3(ext)=9
 #define HEATER_1_PIN            11
 #define TEMP_1_PIN              2
 
-#define SDCARDDETECTINVERTED    1
+#define SDCARDDETECTINVERTED    0
 #define SDPOWER                 -1
 #define SDSS                    53
 #define ORIG_SDCARDDETECT       9
@@ -2941,7 +2941,7 @@ S3(ext)=9
 #define HEATER_PINS_INVERTED 0
 #endif
 
-// Original pin assignmats to be used in configuration tool
+// Original pin assignments to be used in configuration tool
 #define X_STEP_PIN ORIG_X_STEP_PIN
 #define X_DIR_PIN ORIG_X_DIR_PIN
 #define X_ENABLE_PIN ORIG_X_ENABLE_PIN
