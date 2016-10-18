@@ -186,7 +186,7 @@ void Commands::printTemperatures(bool showRaw) {
             Com::printF(Com::tColon,(1023 << (2 - ANALOG_REDUCE_BITS)) - extruder[i].tempControl.currentTemperature);
         }
     }
-#elif NUM_EXTRUDER == 1
+#elif NUM_EXTRUDER == 1 || MIXING_EXTRUDER
 	if((error = extruder[0].tempControl.errorState()) > 0) {
 		Com::printF(PSTR(" D0:"),error);
 	}
@@ -1800,10 +1800,12 @@ void Commands::processMCode(GCode *com) {
             }
             break;
         case 107: // M107 Fan Off
-            if(com->hasP() && com->P == 1)
-                setFan2Speed(0);
-            else
-                setFanSpeed(0);
+            if(!(Printer::flag2 & PRINTER_FLAG2_IGNORE_M106_COMMAND)) {
+	            if(com->hasP() && com->P == 1)
+		            setFan2Speed(0);
+			    else
+				    setFanSpeed(0);
+			}
             break;
 #endif
         case 111: // M111 enable/disable run time debug flags
@@ -2193,17 +2195,20 @@ void Commands::processMCode(GCode *com) {
             Printer::reportPrinterMode();
             break;
         case 451:
+			waitUntilEndOfAllMoves();
             Printer::mode = PRINTER_MODE_FFF;
             Printer::reportPrinterMode();
             break;
         case 452:
 #if defined(SUPPORT_LASER) && SUPPORT_LASER
+			waitUntilEndOfAllMoves();
             Printer::mode = PRINTER_MODE_LASER;
 #endif
             Printer::reportPrinterMode();
             break;
         case 453:
 #if defined(SUPPORT_CNC) && SUPPORT_CNC
+			waitUntilEndOfAllMoves();
             Printer::mode = PRINTER_MODE_CNC;
 #endif
             Printer::reportPrinterMode();

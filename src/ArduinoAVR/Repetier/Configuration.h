@@ -66,6 +66,7 @@ To override EEPROM settings with config settings, set EEPROM_MODE 0
 // Open Motion Controller     = 91
 // Melzi board                = 63  // Define REPRAPPRO_HUXLEY if you have one for correct HEATER_1_PIN assignment!
 // Azteeg X1                  = 65
+// 3Drag/Velleman K8200 (experimental) = 66
 // Gen7 1.1 till 1.3.x        = 7
 // Gen7 1.4.1 and later       = 71
 // Sethi 3D_1                 = 72
@@ -248,7 +249,8 @@ controlled by settings in extruder 0 definition. */
 // 13 is PT100 for E3D/Ultimaker
 // 14 is 100K NTC 3950
 // 15 DYZE DESIGN 500°C Thermistor
-// 16 is generic 50k NTC (FF creator,CTC dual HPB?)
+// 16 is B3 innovations 500°C sensor
+// 17 is generic 50k NTC (FF creator,CTC dual?)
 // 5 is userdefined thermistor table 0
 // 6 is userdefined thermistor table 1
 // 7 is userdefined thermistor table 2
@@ -698,7 +700,7 @@ Value is used for all generic tables created. */
 
 // Select type of your heated bed. It's the same as for EXT0_TEMPSENSOR_TYPE
 // set to 0 if you don't have a heated bed
-#define HEATED_BED_SENSOR_TYPE 16
+#define HEATED_BED_SENSOR_TYPE 17
 
 
 /** Analog pin of analog sensor to read temperature of heated bed.  */
