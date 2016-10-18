@@ -2824,6 +2824,11 @@ S3(ext)=9
 #define MIGHTY1_VOUT_MAX    118
 #define MIGHTY1_CURRENT_DEFAULTS {118,118,40,118,118}
 
+#define UI_DISPLAY_ENABLE_PIN  33
+#define UI_DISPLAY_DATA_PIN    34
+#define UI_DISPLAY_CLOCK_PIN   35
+#define UI_DISPLAY_MTGHTY1
+
 #define POTS_SCL        76
 #define X_POT_PIN       57
 #define Y_POT_PIN       61

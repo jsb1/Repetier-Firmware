@@ -169,16 +169,6 @@ Custom M Codes
 void setup()
 {
     Printer::setup();
-    /*
-  RFSerial.begin(115200);
-    RFSerial.println("init i2c");
-    HAL::i2cInit(100000L);
-    RFSerial.println("start i2c");
-    HAL::i2cStartWait((0x27<<1) + I2C_WRITE);
-    RFSerial.println("i2c write 0");
-    HAL::i2cWrite(0); // IODIRA
-    RFSerial.println("i2c done");
-    */
 }
 
 void loop()

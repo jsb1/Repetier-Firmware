@@ -98,7 +98,7 @@ What display type do you use?
                If you have Sanguino and want to use the library, you need to have Arduino 023 or older. (13.04.2012)
 5 = U8G supported display
 */
-#define UI_DISPLAY_TYPE DISPLAY_I2C
+#define UI_DISPLAY_TYPE DISPLAY_SR
 
 #if UI_DISPLAY_TYPE == DISPLAY_U8G // Special case for graphic displays
 
@@ -218,7 +218,7 @@ Define the pin
 #else // Direct display connections
 #define UI_DISPLAY_RS_PIN		63		// PINK.1, 88, D_RS
 #define UI_DISPLAY_RW_PIN		-1
-#define UI_DISPLAY_ENABLE_PIN	        65		// PINK.3, 86, D_E
+//#define UI_DISPLAY_ENABLE_PIN	        65		// PINK.3, 86, D_E
 #define UI_DISPLAY_D0_PIN		59		// PINF.5, 92, D_D4
 #define UI_DISPLAY_D1_PIN		64		// PINK.2, 87, D_D5
 #define UI_DISPLAY_D2_PIN		44		// PINL.5, 40, D_D6
@@ -234,7 +234,7 @@ Define the pin
 #define UI_DISPLAY_CS1 59
 #define UI_DISPLAY_CS2 59
 #define UI_DISPLAY_DI 59
-#define UI_DISPLAY_RW_PIN 59
+//#define UI_DISPLAY_RW_PIN 59
 #define UI_DISPLAY_RESET_PIN 59
 #endif
 
@@ -244,7 +244,7 @@ Define the pin
 0 = No keys attached - disables also menu
 1 = Some keys attached
 */
-#define UI_HAS_KEYS 0
+#define UI_HAS_KEYS 1
 
 
 /** \brief Is a back key present.
