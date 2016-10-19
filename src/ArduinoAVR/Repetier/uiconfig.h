@@ -98,7 +98,7 @@ What display type do you use?
                If you have Sanguino and want to use the library, you need to have Arduino 023 or older. (13.04.2012)
 5 = U8G supported display
 */
-#define UI_DISPLAY_TYPE DISPLAY_SR
+#define UI_DISPLAY_TYPE 5
 
 #if UI_DISPLAY_TYPE == DISPLAY_U8G // Special case for graphic displays
 
@@ -110,7 +110,7 @@ What display type do you use?
 // CD Pin:   UI_DISPLAY_RS_PIN
 
 // ST7920 with software SPI
-//#define U8GLIB_ST7920
+#define U8GLIB_ST7920
 // SSD1306 with software SPI
 //#define U8GLIB_SSD1306_SW_SPI
 // SH1106 with software SPI
@@ -151,7 +151,6 @@ What display type do you use?
 Typical values are 16 and 20
 */
 #define UI_COLS 20
-
 /**
 Rows of your display. 2 or 4
 */
@@ -165,9 +164,9 @@ Rows of your display. 2 or 4
 #define UI_DISPLAY_I2C_CHIPTYPE 0
 // 0x40 till 0x4e for PCF8574, 0x40 for the adafruid RGB shield, 0x40 - 0x4e for MCP23017
 // Official addresses have a value half as high!
-#define UI_DISPLAY_I2C_ADDRESS (0x27<<1)
+#define UI_DISPLAY_I2C_ADDRESS 0x4e
 // For MCP 23017 define which pins should be output
-#define UI_DISPLAY_I2C_OUTPUT_PINS 0xff
+#define UI_DISPLAY_I2C_OUTPUT_PINS 65504
 // Set the output mask that is or'd over the output data. This is needed to activate
 // a backlight switched over the I2C.
 // The adafruit RGB shields enables a light if the bit is not set. Bits 6-8 are used for backlight.
@@ -181,17 +180,17 @@ A MCP23017 can run also with 400000 Hz */
 Define the pin
 */
 #if UI_DISPLAY_TYPE == DISPLAY_I2C // I2C Pin configuration
-#define UI_DISPLAY_RS_PIN _BV(0)
-#define UI_DISPLAY_RW_PIN _BV(1)
-#define UI_DISPLAY_ENABLE_PIN _BV(2)
-#define UI_DISPLAY_D0_PIN _BV(4)
-#define UI_DISPLAY_D1_PIN _BV(5)
-#define UI_DISPLAY_D2_PIN _BV(6)
-#define UI_DISPLAY_D3_PIN _BV(7)
-#define UI_DISPLAY_D4_PIN _BV(4)
-#define UI_DISPLAY_D5_PIN _BV(5)
-#define UI_DISPLAY_D6_PIN _BV(6)
-#define UI_DISPLAY_D7_PIN _BV(7)
+#define UI_DISPLAY_RS_PIN _BV(4)
+#define UI_DISPLAY_RW_PIN _BV(5)
+#define UI_DISPLAY_ENABLE_PIN _BV(6)
+#define UI_DISPLAY_D0_PIN _BV(0)
+#define UI_DISPLAY_D1_PIN _BV(1)
+#define UI_DISPLAY_D2_PIN _BV(2)
+#define UI_DISPLAY_D3_PIN _BV(3)
+#define UI_DISPLAY_D4_PIN _BV(0)
+#define UI_DISPLAY_D5_PIN _BV(1)
+#define UI_DISPLAY_D6_PIN _BV(2)
+#define UI_DISPLAY_D7_PIN _BV(3)
 
 // uncomment if your using led to indicated the bed is hot
 //#define UI_I2C_HEATBED_LED    _BV(8)
@@ -218,7 +217,7 @@ Define the pin
 #else // Direct display connections
 #define UI_DISPLAY_RS_PIN		63		// PINK.1, 88, D_RS
 #define UI_DISPLAY_RW_PIN		-1
-//#define UI_DISPLAY_ENABLE_PIN	        65		// PINK.3, 86, D_E
+#define UI_DISPLAY_ENABLE_PIN	        65		// PINK.3, 86, D_E
 #define UI_DISPLAY_D0_PIN		59		// PINF.5, 92, D_D4
 #define UI_DISPLAY_D1_PIN		64		// PINK.2, 87, D_D5
 #define UI_DISPLAY_D2_PIN		44		// PINL.5, 40, D_D6
@@ -234,7 +233,7 @@ Define the pin
 #define UI_DISPLAY_CS1 59
 #define UI_DISPLAY_CS2 59
 #define UI_DISPLAY_DI 59
-//#define UI_DISPLAY_RW_PIN 59
+#define UI_DISPLAY_RW_PIN 59
 #define UI_DISPLAY_RESET_PIN 59
 #endif
 
@@ -244,7 +243,7 @@ Define the pin
 0 = No keys attached - disables also menu
 1 = Some keys attached
 */
-#define UI_HAS_KEYS 1
+#define UI_HAS_KEYS 0
 
 
 /** \brief Is a back key present.
@@ -370,11 +369,11 @@ const int matrixActions[] PROGMEM = UI_MATRIX_ACTIONS;
 void uiInitKeys() {
 #if UI_HAS_KEYS!=0
   //UI_KEYS_INIT_CLICKENCODER_LOW(33,31); // click encoder on pins 47 and 45. Phase is connected with gnd for signals.
-  UI_KEYS_INIT_BUTTON_LOW(INTERFACE_LEFT); // push button, connects gnd to pin
-  UI_KEYS_INIT_BUTTON_LOW(INTERFACE_DOWN);
-  UI_KEYS_INIT_BUTTON_LOW(INTERFACE_UP);
-  UI_KEYS_INIT_BUTTON_LOW(INTERFACE_RIGHT);
-  UI_KEYS_INIT_BUTTON_LOW(INTERFACE_CENTER);
+  UI_KEYS_INIT_BUTTON_LOW(4); // push button, connects gnd to pin
+  UI_KEYS_INIT_BUTTON_LOW(5);
+  UI_KEYS_INIT_BUTTON_LOW(6);
+  UI_KEYS_INIT_BUTTON_LOW(11);
+  UI_KEYS_INIT_BUTTON_LOW(42);
 
 //  UI_KEYS_INIT_CLICKENCODER_LOW(47,45); // click encoder on pins 47 and 45. Phase is connected with gnd for signals.
 //  UI_KEYS_INIT_BUTTON_LOW(43); // push button, connects gnd to pin
@@ -385,12 +384,11 @@ void uiCheckKeys(uint16_t &action) {
 #if UI_HAS_KEYS!=0
 
  //UI_KEYS_CLICKENCODER_LOW_REV(33,31); // click encoder on pins 47 and 45. Phase is connected with gnd for signals.
- UI_KEYS_BUTTON_LOW(INTERFACE_CENTER,UI_ACTION_OK); // push button, connects gnd to pin
- UI_KEYS_BUTTON_LOW(INTERFACE_DOWN,UI_ACTION_NEXT); // push button, connects gnd to pin
- UI_KEYS_BUTTON_LOW(INTERFACE_UP,UI_ACTION_PREVIOUS); // push button, connects gnd to pin
- UI_KEYS_BUTTON_LOW(INTERFACE_LEFT,UI_ACTION_BACK); // push button, connects gnd to pin
- // whate do do with INTERFACE_RIGHT?
-// UI_KEYS_BUTTON_LOW(42,UI_ACTION_SD_PRINT ); // push button, connects gnd to pin
+ UI_KEYS_BUTTON_LOW(4,UI_ACTION_OK); // push button, connects gnd to pin
+ UI_KEYS_BUTTON_LOW(5,UI_ACTION_NEXT); // push button, connects gnd to pin
+ UI_KEYS_BUTTON_LOW(6,UI_ACTION_PREVIOUS); // push button, connects gnd to pin
+ UI_KEYS_BUTTON_LOW(11,UI_ACTION_BACK); // push button, connects gnd to pin
+ UI_KEYS_BUTTON_LOW(42,UI_ACTION_SD_PRINT ); // push button, connects gnd to pin
 //  UI_KEYS_CLICKENCODER_LOW_REV(47,45); // click encoder on pins 47 and 45. Phase is connected with gnd for signals.
 //  UI_KEYS_BUTTON_LOW(43,UI_ACTION_OK); // push button, connects gnd to pin
 #endif
