@@ -159,7 +159,6 @@ Custom M Codes
 */
 
 #include "Repetier.h"
-#include "HAL.h"
 #include <SPI.h>
 
 #if UI_DISPLAY_TYPE == DISPLAY_ARDUINO_LIB
