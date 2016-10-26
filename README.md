@@ -2,14 +2,14 @@
 I hope You know what I mean with nightly board...
 
 # Current state
-- Prints really well with repetier host - nothing else tested for now
-- Display, keys, and printing from SD is working now. Currently no idea what to do with "move right" key. 
+- Prints really well with repetier host and from SD card
+- Display and keys working now. "move right" key directly jumps to "print from SD". 
 - No music ;-)
 - Settings in eeprom are currently not enabled.
 - Optimized for old plywood printers. If You have a device with stiff (metal or acrylic) frame You can set xy-acceleration to 3000 mm/s^2 and beyond
-- Heated bed thermistor values are for CTC clones having a 50k ntc - and guessed. Be careful with bed temp settings!
-- Bed zero position is at left and lowest (near to front). When I set it to bed center there are issues with soft endstops. I'll discuss that with repetier team when major issues are resolved
-- Not yet ready for merging to origin. config.h is hardcoded and DUE port is not updated yet.
+- Heated bed thermistor values are for CTC clones having a 50k ntc. Be careful with bed temp settings!.
+- Bed zero position is at left and lowest (near to front). When I set it to bed center there are issues with soft endstops. I'll discuss that with repetier team when major issues are resolved.
+- config.h is coded for my CTC. 
 - Reverting back to sailfish is not tested yet. At minimum You will have to erase the eeprom.
 
 
@@ -18,7 +18,7 @@ Compile with arduino tools 1.6.12 or later ( see boards manager ), set Arduino/G
 I'm using [http://www.fischl.de/usbasp/](usbasp) directly connected to the main processors isp port - nothing else tested yet. Use "upload with programmer" in arduino ide.
 The reset pin on by board is not connected to the usb adapter. It is nearly impossible to use the boot loader.
 
-(some notice: the display code did not kill my hardware as denoted in an earlier version of this document.)
+
 
 Some legal notice:
 This is experimental software. Use at your own risk. We cannot be held liable under any circumstances for damage to hardware or software, lost data, or other direct or indirect damage resulting from the use of this software. If you do not agree to these terms and conditions, you are not permitted to use or further distribute this software.
